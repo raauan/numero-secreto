@@ -10,8 +10,8 @@ function exibirTextoNaTela(tag, texto) {
 }
 
 function exibirMensagemInicial() {
-    exibirTextoNaTela('h1', 'Secret number game');
-    exibirTextoNaTela('p', 'Guess a number between 1 and 100');
+    exibirTextoNaTela('h1', 'Jogo do Número Secreto');
+    exibirTextoNaTela('p', 'Escolha um número entre 1 e 100');
 }
 
 exibirMensagemInicial();
@@ -20,16 +20,16 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
     
     if (chute == numeroSecreto) {
-        exibirTextoNaTela('h1', 'Good job!');
-        let palavraTentativa = tentativas > 1 ? 'tries' : 'try';
-        let mensagemTentativas = `You got it right with ${tentativas} ${palavraTentativa}!`;
+        exibirTextoNaTela('h1', 'Isso aí!');
+        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+        let mensagemTentativas = `Você acertou o número secreto com ${tentativas} ${palavraTentativa}!`;
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
-            exibirTextoNaTela('p', 'The secret number is less than ' + chute);
+            exibirTextoNaTela('p', 'O número secreto é menor que ' + chute);
         } else {
-            exibirTextoNaTela('p', 'The secret number is greater than ' + chute);
+            exibirTextoNaTela('p', 'O número secreto é maior que ' + chute);
         }
         tentativas++;
         limparCampo();
